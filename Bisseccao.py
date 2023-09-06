@@ -23,7 +23,7 @@ while True :
 
     result = FdeA + FdeB / 2
 
-    if result <= e:
+    if abs(result) <= e:
 
         if  isPositivo( a ) != isPositivo( result ) :
 
