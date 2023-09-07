@@ -24,11 +24,10 @@ while True :
     FdeB = b
     result = FdeA + FdeB / 2
 
-
     x = result
     FdeResult = eval( arquivo[3] )
-    
-    if abs(result) <= e:
+
+    if FdeResult <= e:
 
         aux1 = isPositivo( a )
         aux2 = isPositivo( result )
