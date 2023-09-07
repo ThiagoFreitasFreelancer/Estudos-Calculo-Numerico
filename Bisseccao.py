@@ -15,26 +15,39 @@ def isPositivo( n ):
 
 while True :
 
-    x = a
-    FdeA = eval( arquivo[3] )
+    # x = a
+    # FdeA = eval( arquivo[3] )
 
-    x = b
-    FdeB = eval( arquivo[3] )
-
+    # x = b
+    # FdeB = eval( arquivo[3] )
+    FdeA = a
+    FdeB = b
     result = FdeA + FdeB / 2
 
-    if result <= e:
+    x = result
+    FdeResult = eval( arquivo[3] )
 
-        if  isPositivo( a ) != isPositivo( result ) :
+    if FdeResult <= e:
+
+        aux1 = isPositivo( a )
+        aux2 = isPositivo( result )
+
+        aux3 = isPositivo( result ) 
+        aux4 = isPositivo( b )
+
+        print( "a: ", aux1, "/", " result: ", aux2 )
+        print( "result: ", aux3, "/", " b: ", aux4 )
+
+        if aux1 != aux2 :
 
             b = result
         
-        elif isPositivo( result ) != isPositivo( b ):
+        elif aux3 != aux4 :
 
             a = result
 
     else:
 
         read = open( 'Saida.txt', 'w' )
-        read.write( str(result) )
+        read.write( str( result ) )
         break
