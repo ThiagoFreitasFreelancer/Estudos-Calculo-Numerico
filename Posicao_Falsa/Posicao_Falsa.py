@@ -1,6 +1,6 @@
 from sympy import ( sin )
 
-arquivo = open( '../Entrada.txt', 'r' )
+arquivo = open( 'Entrada.txt', 'r' )
 arquivo = arquivo.readlines() 
 
 a = float( arquivo[0] )
@@ -17,13 +17,14 @@ def isPositivo( n ):
         return False
 
 while True :
-    
+
     x = a
     FdeA = eval( arquivo[3] )
     x = b
     FdeB = eval( arquivo[3] )
 
-    c = ( a + b ) / 2
+    c = ( (a * FdeB) - (b * FdeA) ) / ( FdeB - FdeA )
+   
     Seila = (b - a) / a
     erro = b - a
 

@@ -1,6 +1,6 @@
 from sympy import ( sin )
 
-arquivo = open( '../Entrada.txt', 'r' )
+arquivo = open( 'Entrada.txt', 'r' )
 arquivo = arquivo.readlines() 
 
 a = float( arquivo[0] )
@@ -17,7 +17,7 @@ def isPositivo( n ):
         return False
 
 while True :
-    
+
     x = a
     FdeA = eval( arquivo[3] )
     x = b
@@ -29,8 +29,6 @@ while True :
 
     x = c
     FdeC = eval( arquivo[3] )
-
-    print( "a: ",a, "b: ",b,"c: ",c, "f(c): ",FdeC, "Erro: ",erro )
 
     if abs(FdeC) <= e or n == 10:
 
