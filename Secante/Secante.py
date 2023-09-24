@@ -1,7 +1,8 @@
-from sympy import ( sin )
+from sympy import ( sin, cos )
 
 arquivo = open( "Entrada.txt", "r" )
-dados = arquivo.readlines() 
+dados = arquivo.readlines()
+read = open( 'Saida.txt', 'w' )
 
 a = float( dados[0] )
 b = float( dados[1] )
@@ -11,6 +12,7 @@ result = 0
 
 arquivo.close()
 
+read.write('{:<8s}  {:<12s}  {:<12s}  {:<12s}  {:<12s} \n'.format('a', 'b', 'erro', 'f(a)', 'f(b)'))
 
 while True :
     
@@ -24,9 +26,10 @@ while True :
 
     result = aux1 / aux
 
+    read.write('{:<2f}  {:<12.5f}  {:<12.5f}  {:<12.5f}  {:<12.5f} \n'.format( a, b, aux1, FdeA, FdeB))
+
     if  abs( aux1 ) < e :
-        read = open( 'Saida.txt', 'w' )
-        read.write( str( result ) )
+
         break    
 
     a = b

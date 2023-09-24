@@ -1,7 +1,8 @@
-from sympy import ( sin )
+from sympy import ( sin, cos )
 
 arquivo = open( 'Entrada.txt', 'r' )
-arquivo = arquivo.readlines() 
+arquivo = arquivo.readlines()
+read = open( 'Saida.txt', 'w' )
 
 a = float( arquivo[0] )
 b = float( arquivo[1] )
@@ -15,6 +16,8 @@ def isPositivo( n ):
         return True
     else:
         return False
+
+read.write('{:<8s}  {:<12s}  {:<12s}  {:<12s}  {:<12s} \n'.format('a', 'b', 'c', 'f(a)', 'f(c)'))
 
 while True :
 
@@ -30,10 +33,10 @@ while True :
     x = c
     FdeC = eval( arquivo[3] )
 
-    if abs(FdeC) <= e or n == 10:
+    read.write('{:<2f}  {:<12.5f}  {:<12.5f}  {:<12.5f}  {:<12.5f} \n'.format( a, b, c, FdeA, FdeC))
 
-        read = open( 'Saida.txt', 'w' )
-        read.write( str( c ) )
+    if abs(FdeC) <= e :
+
         break
 
     else:        
