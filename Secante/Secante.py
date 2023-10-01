@@ -1,4 +1,5 @@
-from sympy import ( sin, cos )
+from sympy import ( sin, cos, tan )
+import math
 
 arquivo = open( "Entrada.txt", "r" )
 dados = arquivo.readlines()
@@ -12,7 +13,7 @@ result = 0
 
 arquivo.close()
 
-read.write('{:<8s}  {:<12s}  {:<12s}  {:<12s}  {:<12s} \n'.format('a', 'b', 'erro', 'f(a)', 'f(b)'))
+read.write('{:<8s}  {:<12s}  {:<10s}  {:<10s}  {:<10s} \n'.format('a', 'b', 'erro', 'f(a)', 'f(b)'))
 
 while True :
     
@@ -26,7 +27,7 @@ while True :
 
     result = aux1 / aux
 
-    read.write('{:<2f}  {:<12.5f}  {:<12.5f}  {:<12.5f}  {:<12.5f} \n'.format( a, b, aux1, FdeA, FdeB))
+    read.write('{:<10.5f}  {:<10.5f}  {:<10.5f}  {:<10.5f}  {:<10.5f} \n'.format( a, b, aux1, FdeA, FdeB))
 
     if  abs( aux1 ) < e :
 
@@ -35,7 +36,8 @@ while True :
     a = b
     b = result
 
-    if n > 10 :
+    if n > 20 :
+
         break;
 
     n = n + 1

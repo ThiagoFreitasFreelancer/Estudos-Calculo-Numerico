@@ -1,52 +1,45 @@
-from sympy import ( sin, cos )
+from sympy import ( sin, cos, tan )
+import math
 
 arquivo = open( 'Entrada.txt', 'r' )
-arquivo = arquivo.readlines()
+arquivos = arquivo.readlines()
+arquivo.close()
+
 read = open( 'Saida.txt', 'w' )
 
-a = float( arquivo[0] )
-b = float( arquivo[1] )
-e = float( arquivo[2] )
+a = float( arquivos[0] )
+b = float( arquivos[1] )
+e = float( arquivos[2] )
 c = 0.0
 n = 0
 
-def isPositivo( n ):
-
-    if n >= 0:
-        return True
-    else:
-        return False
-
-read.write('{:<8s}  {:<12s}  {:<12s}  {:<12s}  {:<12s} \n'.format('a', 'b', 'c', 'f(a)', 'f(c)'))
+read.write('{:<8s}  {:<12s}  {:<12s}  {:<12s}  {:<12s} {:<12s} \n'.format('a', 'b', 'c', 'f(a)', 'f(b)', 'f(c)'))
 
 while True :
 
     x = a
-    FdeA = eval( arquivo[3] )
+    FdeA = eval( arquivos[3] )
     x = b
-    FdeB = eval( arquivo[3] )
+    FdeB = eval( arquivos[3] )
 
     c = ( a + b ) / 2
-    Seila = (b - a) / a
-    erro = b - a
 
     x = c
-    FdeC = eval( arquivo[3] )
+    FdeC = eval( arquivos[3] )
 
-    read.write('{:<2f}  {:<12.5f}  {:<12.5f}  {:<12.5f}  {:<12.5f} \n'.format( a, b, c, FdeA, FdeC))
+    read.write('{:<2f}  {:<12.5f}  {:<12.5f}  {:<12.5f}  {:<12.5f} {:<12.5f} \n'.format( a, b, c, FdeA, FdeB, FdeC))
 
-    if abs(FdeC) <= e :
+    if abs(FdeC) <= e or n > 20 :
 
         break
 
     else:        
         
-        if isPositivo( FdeC ):
+        if FdeC > 0:
 
             b = c
         
         else:
 
             a = c
-
     n = n + 1
